@@ -47,6 +47,7 @@ class Operations:
         self.num_comptes = num_comptes
         self.credit_accorde = credit_accorde
         
+ class Credits:       
     def calculInterets12Mois(self):
         self.interets = self.credit_accorde * 0.05
         return self.interets
@@ -67,7 +68,7 @@ mydb  = mc.connect(
 # # --------------
 # # TEST ET CURSOR
 # # --------------
-print (mydb)
+#print (mydb)
 sql_req = mydb.cursor()
 # # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -132,9 +133,9 @@ for ligne in operations_table:
     elt = Operations(ligne[0], ligne[1], ligne[2], ligne[3])
     TAB_OPERATIONS.append(elt)
     
-print(TAB_CLIENTS[0].id_client)
-print(TAB_COMPTES[0].id_compte)
-print(TAB_OPERATIONS[0].id_operation)
+#print(TAB_CLIENTS[0].id_client)
+#print(TAB_COMPTES[0].id_compte)
+#print(TAB_OPERATIONS[0].id_operation)
 
 #creation table credit
 sql_req.execute("create table credits (id_credit int(20) not null auto_increment primary key, id_client int(20) not null, nom char(20) not null, prenom char(20) not null, numero_comptes char(100) not null, credit_accorde int(20))")
@@ -191,7 +192,7 @@ for elt in TAB_CLIENTS:
 for ligne in  TAB_CLIENTS :
     if ligne.score >0.4:
         valeur_credit= ligne.score*10000
-        print(valeur_credit)
+        #print(valeur_credit)
         req = "insert into banque2.credits (id_client, nom, prenom, numero_comptes, credit_accorde) values(%s,%s,%s,%s,%s)"
         sql_req.execute(req,(ligne.id_client,ligne.nom,ligne.prenom,ligne.numCompte,valeur_credit ))
 
