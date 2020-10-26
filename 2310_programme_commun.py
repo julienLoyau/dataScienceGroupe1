@@ -38,7 +38,8 @@ class Operations:
         self.id_compte = id_compte
         self.nb_operations = nb_operations
         self.nb_decouverts_dans_l_annee = nb_decouverts_dans_l_annee
-
+        
+class Credits: 
     def __init__(self, id_credit,id_client, nom, prenom, num_comptes, credit_accorde):
         self.id_credit = id_credit
         self.id_client = id_client
@@ -46,8 +47,7 @@ class Operations:
         self.prenom = prenom
         self.num_comptes = num_comptes
         self.credit_accorde = credit_accorde
-        
- class Credits:       
+             
     def calculInterets12Mois(self):
         self.interets = self.credit_accorde * 0.05
         return self.interets
