@@ -263,3 +263,32 @@ while (valeur_future_credits - valeur_initiale_credits) < gain_espere:
         valeur_future_credits += ligne.valeurFutureCredit(n)
       
 print("Pour gagner 10 fois plus, proposer la durée de crédit de :", str(n),"mois")
+
+#partie 2 du TP permet de modifier, d'ajouter un nveau client
+"""
+action = int(input("Que voulez vous faire ? \n 1 pour  ajouter un client, \n 2 pour supprimer un client, \n 3 pour modifier un client"))
+
+actionN = input("Entrez le nom du client : ")
+actionP = input("Entrez le prenom du client : ")
+actionA = input("Entrez l'adresse du client : ")
+
+a=Client(actionN, actionP, actionA)
+if action == 1 :
+    if a.existClient(TAB_CLIENTS):
+        print("Le client ",a.nom," existe déja ")
+    else :
+        print("programme à continuer")
+if action == 2 :
+    if a.existClient(TAB_CLIENTS):
+        sql_req.execute('DELETE FROM clients WHERE nom='+actionN+' and prenom='+actionP+' and adresse='+actionA)
+        print("Le client ",a.nom," existe déja et a été supprimé ")
+    else :
+        print("Le client ",a.nom," n'existe pas ")
+if action == 3 :
+    if a.existClient(TAB_CLIENTS):
+        reponse = input("quel information voulez vous modifier ? ")
+        print("programme à continuer")
+    else :
+        print("Le client ",a.nom," n'existe pas ")
+        """
+
